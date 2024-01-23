@@ -33,3 +33,14 @@ Implementa, al menos, lo siguiente:
 En el programa principal se deben crear 3 cafeteras de capacidad 1000, 750 y 500 c.c. con 0, 750 y 200 c.c de cantidad respectivamente. Para crear cada cafetera, debéis utilizar un constructor diferente.
 También debéis generar una lista de 20 tazas con la capacidad de 50, 75 y 100 de manear aleatoria.
 Implementar el resto de comentarios TODO de la función main().
+
+NOTA:
+
+```
+la sobrecarga de métodos se refiere a la capacidad de definir varios métodos en una clase con el mismo nombre
+pero con diferentes parámetros. Esto permite que una clase tenga varios métodos con la misma firma (nombre de método)
+pero con listas de parámetros diferentes.
+
+La sobrecarga de métodos facilita la legibilidad del código y proporciona flexibilidad al programador al permitirle
+utilizar el mismo nombre de método para realizar operaciones similares pero con diferentes conjuntos de datos.
+```
