@@ -1,3 +1,5 @@
+import java.util.Objects
+
 /*
 Desarrolla un programa con las siguientes clases:
 
@@ -43,47 +45,120 @@ método para realizar operaciones similares pero con diferentes conjuntos de dat
 */
 
 fun main() {
-
+    val tazas = listOf<String>("taza1","taza2","taza3","taza4","taza5","taza6","taza7","taza8","taza9","taza10","taza11","taza12","taza13","taza14","taza15","taza16","taza17","taza18","taza19","taza20")
     //TODO: Crear 3 cafeteras en la Sala, Cocina y Oficina
-
+    val cafetera1 = Cafetera("Sala", 1000, 0)
+    val cafetera2 = Cafetera("Cocina", 750, 750)
+    val cafetera3 = Cafetera("Oficina", 500, 200)
 
     //TODO: Crear una lista de 20 tazas con capacidades aleatorias
+    val taza1 = Taza()
+    val taza2 = Taza()
+    val taza3 = Taza()
+    val taza4 = Taza()
+    val taza5 = Taza()
+    val taza6 = Taza()
+    val taza7 = Taza()
+    val taza8 = Taza()
+    val taza9 = Taza()
+    val taza10 = Taza()
+    val taza11 = Taza()
+    val taza12 = Taza()
+    val taza13 = Taza()
+    val taza14 = Taza()
+    val taza15 = Taza()
+    val taza16 = Taza()
+    val taza17 = Taza()
+    val taza18 = Taza()
+    val taza19 = Taza()
+    val taza20 = Taza()
 
-   
     println("**********************************************")
     //TODO: Mostrar por pantalla el contenido de las 3 cafeteras y las tazas.
-
-    
+    println(cafetera1.toString())
+    println(cafetera2.toString())
+    println(cafetera3.toString())
     println("**********************************************")
     println("Llenar la cafetera1 de café...")
     println("Vaciar la cafetera2...")
     println("Agregar café a la cafetera2 a la mitad de su capacidad...")
     println("Agregar 400 c.c. de café a la cafereta3...")
+    println(taza1.toString())
+    println(taza2.toString())
+    println(taza3.toString())
+    println(taza4.toString())
+    println(taza5.toString())
+    println(taza6.toString())
+    println(taza7.toString())
+    println(taza8.toString())
+    println(taza9.toString())
+    println(taza10.toString())
+    println(taza11.toString())
+    println(taza12.toString())
+    println(taza13.toString())
+    println(taza14.toString())
+    println(taza15.toString())
+    println(taza16.toString())
+    println(taza17.toString())
+    println(taza18.toString())
+    println(taza19.toString())
+    println(taza20.toString())
+
 
     //TODO: Llenar la cafetera1 de café.
-
+    cafetera1.llenar()
 
     //TODO: Vaciar la cafetera2.
-
+    cafetera2.vaciar()
 
     //TODO: Agregar café a la cafetera2 a la mitad de su capacidad.
-
+    cafetera2.llenar(375)
 
     //TODO: Agregar 400 c.c. de café a la cafereta3
-
+    cafetera3.llenar(400)
 
     println("**********************************************")
     //TODO: Mostrar por pantalla el contenido de las 3 cafeteras
-
+    println(cafetera1.toString())
+    println(cafetera2.toString())
+    println(cafetera3.toString())
 
     println("**********************************************")
     println("Servir café en las tazas...")
 
     //TODO: Servir café en las tazas... siempre que haya café en la cafetera y en el orden cafetera1, cafetera2 y cafetera3.
+    //val listaCafeteras = listOf<Cafetera>(cafetera1, cafetera2, cafetera3)
+   // val listaTazas = listOf<Taza>()
+    //for (taza in 1..20){
 
+    //}
+    cafetera1.servirTaza(taza11)
+    cafetera2.servirTaza(taza14)
+    cafetera3.servirTaza(taza18)
 
     println("**********************************************")
     //TODO: Mostrar por pantalla el contenido de las 3 cafeteras y las tazas.
-
-
+    println(cafetera1.toString())
+    println(cafetera2.toString())
+    println(cafetera3.toString())
+    println(taza1.toString())
+    println(taza2.toString())
+    println(taza3.toString())
+    println(taza4.toString())
+    println(taza5.toString())
+    println(taza6.toString())
+    println(taza7.toString())
+    println(taza8.toString())
+    println(taza9.toString())
+    println(taza10.toString())
+    println(taza11.toString())
+    println(taza12.toString())
+    println(taza13.toString())
+    println(taza14.toString())
+    println(taza15.toString())
+    println(taza16.toString())
+    println(taza17.toString())
+    println(taza18.toString())
+    println(taza19.toString())
+    println(taza20.toString())
 }
