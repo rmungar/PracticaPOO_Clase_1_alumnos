@@ -40,9 +40,11 @@ fun main() {
 
     //TODO: Crear una lista de 20 tazas con capacidades aleatorias
 
+   
     println("**********************************************")
     //TODO: Mostrar por pantalla el contenido de las 3 cafeteras y las tazas.
 
+    
     println("**********************************************")
     println("Llenar la cafetera1 de café...")
     println("Vaciar la cafetera2...")
