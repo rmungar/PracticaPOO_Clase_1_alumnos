@@ -1,12 +1,7 @@
-class Taza () {
+class Taza (val color: Color = Color.BLANCO, var capacidad:Int = 50) {
 
-    var color: String = "Blanco"
-    var capacidad:Int = 50
     init {
         val capacidades = listOf<Int>(50, 75, 100)
-        val colores = listOf<String>("blanco", "negro", "gris", "azul", "verde")
-
-        color = colores.random()
         capacidad = capacidades.random()
     }
 
@@ -14,6 +9,7 @@ class Taza () {
         set(value){
             comprobarCantidad(field)
             field = value
+            // field = if (value > this.capacidad) this.capacidad else value
         }
 
 
@@ -25,10 +21,17 @@ class Taza () {
         }
     }
 
+    /**
+     * Llena la taza a maxima capacidad, al igual que Cafetera.llenar()
+     */
     fun llenar(){
         cantidad = capacidad
     }
 
+    /**
+     * Es muy parecida a la función anterior, pero esta permite llenar la cantidad que el usuario quiera
+     * @param Int: Int  cantidad que ingresa el usuario
+     */
     fun llenar(Int: Int){
         if (Int< capacidad){
             println("Llenando taza...")

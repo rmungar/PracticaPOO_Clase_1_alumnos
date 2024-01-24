@@ -1,8 +1,6 @@
-class Cafetera (var ubicacion: String) {
+class Cafetera (val ubicacion: String) {
 
-
-
-    var capacidad: Int = 0
+    var capacidad: Int = 1000
         set(value) {
             comprobarCapacidad(value)
             field = value
@@ -21,7 +19,6 @@ class Cafetera (var ubicacion: String) {
         }
     }
     constructor(ubicacion: String,capacidad: Int) : this(ubicacion){
-        this.ubicacion = ubicacion
         this.capacidad = capacidad
     }
     init {
@@ -29,42 +26,55 @@ class Cafetera (var ubicacion: String) {
     }
 
     constructor(ubicacion: String, capacidad: Int, cantidad: Int): this (ubicacion, capacidad){
-        this.cantidad = cantidad
+        this.cantidad = if (capacidad > cantidad) capacidad else cantidad  //Haciendo esto me ahorro el init, al contrario que arriba
         this.capacidad = capacidad
-        this.ubicacion = ubicacion
     }
 
+    /**
+     * Llena la cafetera a la capacidad máxima igualando la cantidad a la capacidad (BIEN)
+     */
     fun llenar(){
-        cantidad = capacidad
+        this.cantidad = this.capacidad
         println("Cafetera llenada")
     }
-    fun servirTaza(taza: Taza) {
-        do {
-            if (cantidad >= 50) {
-                cantidad -= taza.capacidad
-                println("Sirviendo taza...")
-                println("Taza servida")
-                taza.cantidad = taza.capacidad
-            } else {
-                if (cantidad < taza.capacidad) {
-                    println("Cantidad insuficiente para una taza completa...")
-                    taza.cantidad = cantidad
-                    cantidad = 0
-                    println("Taza servida")
 
-                } else {
-                    println("Cafetera vacía, por favor rellene el deposito de café...")
-                    readln()
-                }
+    /**
+     * Llena una taza pasada por parámetro a su capacidad máxima en caso de que
+     * @param taza: Taza objeto taza pasado por parámetro
+     */
+    fun servirTaza(taza: Taza) {
+        if (cantidad > 0) {
+            taza.llenar()
+            cantidad -= taza.capacidad
+            println("Taza servida")
+            // taza.cantidad = taza.capacidad               DEBERIA DE HABER SIDO COMO EN LA LINEA INFERIOR
+
+        } else {
+            if (cantidad < taza.capacidad) {
+                // taza.cantidad = cantidad                 DEBERIA DE HABER SIDO COMO EN LA LINEA INFERIOR
+                taza.llenar(cantidad)
+                cantidad = 0
+                println("Taza servida")
+
+            } else {
+                println("Cafetera vacía, por favor rellene el deposito de café...")
+                vaciar()
             }
-        } while (cantidad > 0)
+        }
     }
 
-        fun vaciar(){
+    /**
+     * Vacía la cafetera igualando la cantidad a 0 (BIEN)
+     */
+    fun vaciar(){
         cantidad = 0
         println("Cafetera vacía")
     }
-    fun llenar(Int: Int){
+
+    /**
+     * Añade la cantidad de café especificada por el usuario, comprobando la cantidad en el momento anterior a llenar.
+     */
+    fun agregarCafé(Int: Int){ //No deberias haber cambiado el nombre, en vez de haber desarrollado el método deberias haber empleado llenar()
         if (cantidad+Int == capacidad){
             println("Cafetera a máxima capacidad")
             cantidad = capacidad
@@ -73,7 +83,6 @@ class Cafetera (var ubicacion: String) {
             println("Cafetera se ha llenado a maxima capacidad")
             println("Por favor recoge el sobrante...")
             cantidad = capacidad
-            readln()
         }
         else{
             println("Cafetera llenada al ${(cantidad+Int*100)/capacidad}%")

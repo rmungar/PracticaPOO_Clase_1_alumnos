@@ -48,47 +48,24 @@ fun main() {
 
 
     //TODO: Crear 3 cafeteras en la Sala, Cocina y Oficina
-    val cafetera1 = Cafetera("Sala", 1000, 0)
-    val cafetera2 = Cafetera("Cocina", 750, 750)
+    val cafetera1 = Cafetera("Sala")
+    val cafetera2 = Cafetera("Cocina", 750)
     val cafetera3 = Cafetera("Oficina", 500, 200)
-    val listaCafeteras = listOf<Cafetera>(cafetera1, cafetera2, cafetera3)
+    val cafeteras = listOf<Cafetera>(cafetera1, cafetera2, cafetera3)
 
     //TODO: Crear una lista de 20 tazas con capacidades aleatorias
-    val taza1 = Taza()
-    val taza2 = Taza()
-    val taza3 = Taza()
-    val taza4 = Taza()
-    val taza5 = Taza()
-    val taza6 = Taza()
-    val taza7 = Taza()
-    val taza8 = Taza()
-    val taza9 = Taza()
-    val taza10 = Taza()
-    val taza11 = Taza()
-    val taza12 = Taza()
-    val taza13 = Taza()
-    val taza14 = Taza()
-    val taza15 = Taza()
-    val taza16 = Taza()
-    val taza17 = Taza()
-    val taza18 = Taza()
-    val taza19 = Taza()
-    val taza20 = Taza()
-    val listaTazas = listOf<Taza>(taza1, taza2, taza3, taza4, taza5, taza6, taza7, taza8, taza9, taza10, taza11, taza12, taza13, taza14, taza15, taza16, taza17, taza18, taza19, taza20)
+    val tazas = GestionCafes.crearListaTazas()
+    //val Tazas = listOf<Taza>(taza1, taza2, taza3, taza4, taza5, taza6, taza7, taza8, taza9, taza10, taza11, taza12, taza13, taza14, taza15, taza16, taza17, taza18, taza19, taza20)
     println("**********************************************")
     //TODO: Mostrar por pantalla el contenido de las 3 cafeteras y las tazas.
-    println(cafetera1.toString())
-    println(cafetera2.toString())
-    println(cafetera3.toString())
+    GestionCafes.mostrarCafeteras(cafeteras)
     println("**********************************************")
     println("Llenar la cafetera1 de café...")
     println("Vaciar la cafetera2...")
     println("Agregar café a la cafetera2 a la mitad de su capacidad...")
     println("Agregar 400 c.c. de café a la cafereta3...")
-    for (taza in listaTazas){
-        println(taza.toString())
-    }
-
+    println("**********************************************")
+    GestionCafes.mostrarTazas(tazas)
 
     //TODO: Llenar la cafetera1 de café.
     cafetera1.llenar()
@@ -97,34 +74,20 @@ fun main() {
     cafetera2.vaciar()
 
     //TODO: Agregar café a la cafetera2 a la mitad de su capacidad.
-    cafetera2.llenar(375)
+    cafetera2.agregarCafé(375)
 
     //TODO: Agregar 400 c.c. de café a la cafereta3
-    cafetera3.llenar(400)
+    cafetera3.agregarCafé(400)
 
     println("**********************************************")
     //TODO: Mostrar por pantalla el contenido de las 3 cafeteras
-    println(cafetera1.toString())
-    println(cafetera2.toString())
-    println(cafetera3.toString())
-
+    GestionCafes.mostrarCafeteras(cafeteras)
     println("**********************************************")
     println("Servir café en las tazas...")
-
     //TODO: Servir café en las tazas... siempre que haya café en la cafetera y en el orden cafetera1, cafetera2 y cafetera3.
-
-    for (taza in 1..20) {
-        cafetera1.servirTaza(taza11)
-        cafetera2.servirTaza(taza14)
-        cafetera3.servirTaza(taza18)
-
-        println("**********************************************")
-        //TODO: Mostrar por pantalla el contenido de las 3 cafeteras y las tazas.
-        println(cafetera1.toString())
-        println(cafetera2.toString())
-        println(cafetera3.toString())
-        for (tazon in listaTazas){
-            println(tazon.toString())
-        }
-    }
+    GestionCafes.servirTazas(tazas,cafeteras)
+    println("**********************************************")
+    //TODO: Mostrar por pantalla el contenido de las 3 cafeteras y las tazas.
+    GestionCafes.mostrarCafeteras(cafeteras)
+    GestionCafes.mostrarTazas(tazas)
 }
